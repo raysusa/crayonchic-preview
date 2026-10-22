@@ -23,7 +23,7 @@ window.CRAYON_BRAND = {
 // To switch it off early: enabled: false. It also hides itself automatically from hideFrom on.
 window.CRAYON_PROMO = {
   christmas: {
-    enabled: true,
+    enabled: false,                        // OFF per Ray (Oct 22, 2026); set true to bring it back
     id: "xmas-2026",                       // change for next year's banner so dismissals reset
     hideFrom: "2026-12-26",                // auto-hides from this date (visitor's local time)
     eyebrow: "Christmas gifting",
