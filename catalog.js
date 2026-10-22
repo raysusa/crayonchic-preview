@@ -1,7 +1,7 @@
 /* ===================================================================
    CRAYON CHIC — BOOK CATALOG (single source of truth)
-   To add a book: copy one object below, change its values, then copy
-   books/_template/ to books/<slug>/ (see README.md). Nothing else.
+   To add a book: copy one object below, change its values, then run
+   node tools/build-pages.js (see README.md). Nothing else.
    Image paths are relative to the site root.
    =================================================================== */
 window.CRAYON_BRAND = {
@@ -12,7 +12,25 @@ window.CRAYON_BRAND = {
   print: "Premium color on bright white paper",
   cover: "Glossy cover",
   instagram: "https://www.instagram.com/crayon.chic/",
-  email: "hello@crayonchic.com"
+  email: "hello@crayonchic.com",
+  // GoatCounter analytics site code (free account at https://www.goatcounter.com/signup).
+  // Site code for https://crayonchic.goatcounter.com. If it ever changes, edit it here
+  // and run  node tools/build-pages.js  to write it into every page.
+  goatcounter: "crayonchic"
+};
+
+// Seasonal banner (shown on the home page and every book page, dismissible).
+// To switch it off early: enabled: false. It also hides itself automatically from hideFrom on.
+window.CRAYON_PROMO = {
+  christmas: {
+    enabled: true,
+    id: "xmas-2026",                       // change for next year's banner so dismissals reset
+    hideFrom: "2026-12-26",                // auto-hides from this date (visitor's local time)
+    eyebrow: "Christmas gifting",
+    text: "Giving a book this Christmas? Order on Amazon by Dec 15 for delivery before Dec 25.",
+    note: "Suggested date only. Check the delivery estimate on Amazon at checkout.",
+    books: ["lebanese-mezze", "lebanese-sweets"]   // slugs; only live books are shown
+  }
 };
 
 window.CRAYON_BOOKS = [
@@ -25,6 +43,7 @@ window.CRAYON_BOOKS = [
     titleAr: "مازة لبنانية",
     status: "live",                 // "live" | "coming-soon"
     statusLabel: "Available now",
+    asin: "B0HNJ17JMC",             // drives the "Leave a review" link
     amazonUrl: "https://www.amazon.com/dp/B0HNJ17JMC",
     price: "$13.49",
     accent: "#245F5A",              // teal
@@ -62,12 +81,13 @@ window.CRAYON_BOOKS = [
     collection: "The Lebanese Collection",
     title: "My First Lebanese Sweets Coloring Book",
     shortTitle: "Lebanese Sweets",
-    subtitle: "Twenty treats for Christmas, Ramadan, Eid and Easter",
+    subtitle: "20 Big & Simple Dessert Pictures for Toddlers and Kids Ages 2–6: Baklawa, Maamoul, Knafeh, Booza and More",
     titleAr: "حلويات لبنانية",
-    status: "coming-soon",
-    statusLabel: "Coming soon · Holiday 2026",
-    amazonUrl: "",                  // add the Amazon link when it goes live
-    price: "",                      // add the price when it goes live
+    status: "live",
+    statusLabel: "Available now",
+    asin: "B0HNRZ9T2G",
+    amazonUrl: "https://www.amazon.com/dp/B0HNRZ9T2G",
+    price: "$13.49",
     accent: "#5B1D31",              // rose
     arabic: true,
     audience: "Kids",
